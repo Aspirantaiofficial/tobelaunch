@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -164,8 +165,9 @@
         .feature-icon {
             width: 52px; height: 52px; border-radius: 14px;
             display: flex; align-items: center; justify-content: center;
-            font-size: 24px; margin-bottom: 20px;
+            margin-bottom: 20px;
         }
+        .feature-icon svg { width: 26px; height: 26px; stroke-width: 1.8; }
         .feature-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 10px; }
         .feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
         .feature-card .tag {
@@ -194,7 +196,12 @@
             background: var(--bg-card); border: 1px solid var(--border);
             border-radius: var(--radius); padding: 28px; text-align: center;
         }
-        .why-card .emoji { font-size: 40px; margin-bottom: 16px; }
+        .why-icon {
+            width: 56px; height: 56px; border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px;
+        }
+        .why-icon svg { width: 28px; height: 28px; stroke-width: 1.8; }
         .why-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
         .why-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
 
@@ -257,36 +264,7 @@
             font-size: 16px; color: var(--text-secondary);
             max-width: 500px; margin: 0 auto 32px; position: relative;
         }
-        .early-access-form {
-            display: flex; gap: 12px; justify-content: center;
-            flex-wrap: wrap; max-width: 520px; margin: 0 auto;
-            position: relative;
-        }
-        .early-access-form input {
-            flex: 1; min-width: 240px; padding: 14px 20px;
-            border-radius: 12px; border: 1px solid var(--border);
-            background: var(--bg-primary); color: var(--text-primary);
-            font-size: 15px; font-family: inherit; outline: none;
-            transition: border-color 0.2s;
-        }
-        .early-access-form input:focus { border-color: var(--accent); }
-        .early-access-form input::placeholder { color: var(--text-muted); }
-        .early-access-form button {
-            padding: 14px 32px; border-radius: 12px; border: none;
-            background: var(--accent); color: var(--bg-primary);
-            font-size: 15px; font-weight: 700; cursor: pointer;
-            font-family: inherit; transition: all 0.25s; white-space: nowrap;
-        }
-        .early-access-form button:hover { box-shadow: 0 4px 20px rgba(45,212,191,0.4); }
-        .form-note {
-            font-size: 12px; color: var(--text-muted); margin-top: 12px;
-            position: relative;
-        }
-        .form-success {
-            display: none; padding: 16px 24px; border-radius: 12px;
-            background: var(--accent-dim); color: var(--accent);
-            font-weight: 600; font-size: 15px; margin-top: 16px;
-        }
+        
 
         /* ── Footer ── */
         footer {
@@ -340,7 +318,7 @@
             <li><a href="#compare">Compare</a></li>
             <li><a href="#testimonials">Reviews</a></li>
         </ul>
-        <a href="#early-access" class="nav-cta nav-cta-desktop">Get Early Access</a>
+        <a href="#download" class="nav-cta nav-cta-desktop">Download App</a>
         <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
@@ -352,11 +330,11 @@
 <!-- Hero -->
 <section class="hero">
     <div class="hero-content fade-in">
-        <div class="hero-badge"><span class="dot"></span> Now accepting early access requests</div>
+        <div class="hero-badge"><span class="dot"></span> Coming soon to Google Play Store</div>
         <h1>Your AI-Powered UPSC Preparation Companion</h1>
         <p>Practice MCQs, get instant essay evaluations, ace mock interviews with AI voice, and stay on top of current affairs — all in one app built for serious aspirants.</p>
         <div class="hero-buttons">
-            <a href="#early-access" class="btn-primary">Request Early Access</a>
+            <a href="#download" class="btn-primary">Download Soon on Play Store</a>
             <a href="#features" class="btn-secondary">Explore Features</a>
         </div>
         <div class="hero-stats">
@@ -390,37 +368,37 @@
         </div>
         <div class="features-grid">
             <div class="feature-card fade-in">
-                <div class="feature-icon icon-mcq">&#x2705;</div>
+                <div class="feature-icon icon-mcq"><i data-lucide="circle-check-big" style="color:#3B82F6"></i></div>
                 <h3>AI MCQ Practice</h3>
                 <p>Generates exam-specific MCQs for UPSC, BPSC, UPPSC, and all State PCS exams. Choose your topic, difficulty level, and get instant feedback with detailed explanations.</p>
                 <span class="tag tag-ai">AI-Generated</span>
             </div>
             <div class="feature-card fade-in">
-                <div class="feature-icon icon-essay">&#x270D;&#xFE0F;</div>
+                <div class="feature-icon icon-essay"><i data-lucide="file-pen-line" style="color:#8B5CF6"></i></div>
                 <h3>Mains Essay Evaluation</h3>
                 <p>Write your essay and get an instant AI evaluation with scores across multiple parameters — structure, content depth, language, and UPSC relevance. Hindi supported.</p>
                 <span class="tag tag-smart">Smart Scoring</span>
             </div>
             <div class="feature-card fade-in">
-                <div class="feature-icon icon-interview">&#x1F3A4;</div>
+                <div class="feature-icon icon-interview"><i data-lucide="mic" style="color:#FBBF24"></i></div>
                 <h3>AI Voice Mock Interview</h3>
                 <p>Experience a realistic UPSC personality test with AI-powered voice conversation. Get evaluated on 12 parameters used by the actual UPSC board. Practice anytime, anywhere.</p>
                 <span class="tag tag-live">Live Voice AI</span>
             </div>
             <div class="feature-card fade-in">
-                <div class="feature-icon icon-news">&#x1F4F0;</div>
+                <div class="feature-icon icon-news"><i data-lucide="newspaper" style="color:#2DD4BF"></i></div>
                 <h3>Daily Current Affairs</h3>
                 <p>AI-curated daily current affairs with UPSC relevance scores, category tags, and concise summaries. Save articles for revision and never miss what matters.</p>
                 <span class="tag tag-daily">Auto-Updated</span>
             </div>
             <div class="feature-card fade-in">
-                <div class="feature-icon icon-community">&#x1F4AC;</div>
+                <div class="feature-icon icon-community"><i data-lucide="users" style="color:#F472B6"></i></div>
                 <h3>Aspirant Community</h3>
                 <p>Connect with fellow aspirants, share strategies, discuss questions, and follow toppers. AI moderation keeps the community focused and relevant.</p>
                 <span class="tag tag-social">Social Learning</span>
             </div>
             <div class="feature-card fade-in">
-                <div class="feature-icon icon-notes">&#x1F4DA;</div>
+                <div class="feature-icon icon-notes"><i data-lucide="book-open" style="color:#60A5FA"></i></div>
                 <h3>Smart Revision Notes</h3>
                 <p>Auto-generated revision notes from your practice sessions. Organized by topic for quick review before exams. Your personal knowledge bank.</p>
                 <span class="tag tag-smart">Auto-Organized</span>
@@ -439,32 +417,32 @@
         </div>
         <div class="why-grid">
             <div class="why-card fade-in">
-                <div class="emoji">&#x1F4B0;</div>
+                <div class="why-icon" style="background:rgba(45,212,191,0.12)"><i data-lucide="wallet" style="color:#2DD4BF"></i></div>
                 <h3>Budget Friendly</h3>
                 <p>One coaching class costs &#8377;50,000+/year. AspirantAI gives you AI-powered practice and evaluation starting free. Premium at a fraction of coaching fees.</p>
             </div>
             <div class="why-card fade-in">
-                <div class="emoji">&#x23F0;</div>
+                <div class="why-icon" style="background:rgba(59,130,246,0.12)"><i data-lucide="clock" style="color:#3B82F6"></i></div>
                 <h3>Time Saving</h3>
                 <p>No waiting for teacher feedback. Get instant essay evaluations, MCQ explanations, and interview scores in seconds — not days.</p>
             </div>
             <div class="why-card fade-in">
-                <div class="emoji">&#x1F3E0;</div>
+                <div class="why-icon" style="background:rgba(139,92,246,0.12)"><i data-lucide="home" style="color:#8B5CF6"></i></div>
                 <h3>Study From Home</h3>
                 <p>No need to relocate to Delhi or Patna. Practice mock interviews, evaluate essays, and take MCQ tests from the comfort of your home.</p>
             </div>
             <div class="why-card fade-in">
-                <div class="emoji">&#x1F4CA;</div>
+                <div class="why-icon" style="background:rgba(251,191,36,0.12)"><i data-lucide="bar-chart-3" style="color:#FBBF24"></i></div>
                 <h3>Track Progress</h3>
                 <p>Performance dashboard, history tracking, and best scores — see how you're improving over time with data-driven insights.</p>
             </div>
             <div class="why-card fade-in">
-                <div class="emoji">&#x1F30D;</div>
+                <div class="why-icon" style="background:rgba(244,114,182,0.12)"><i data-lucide="languages" style="color:#F472B6"></i></div>
                 <h3>Hindi + English</h3>
                 <p>Practice MCQs and write essays in Hindi or English. We support bilingual aspirants because language shouldn't be a barrier.</p>
             </div>
             <div class="why-card fade-in">
-                <div class="emoji">&#x1F512;</div>
+                <div class="why-icon" style="background:rgba(96,165,250,0.12)"><i data-lucide="shield-check" style="color:#60A5FA"></i></div>
                 <h3>Always Available</h3>
                 <p>24/7 access to AI-powered practice. No scheduling, no appointments. Practice at 2 AM if that's when you study best.</p>
             </div>
@@ -569,20 +547,13 @@
     </div>
 </section>
 
-<!-- Early Access CTA -->
-<section id="early-access">
+<!-- Download CTA -->
+<section id="download">
     <div class="section-inner">
         <div class="early-access fade-in">
-            <h2>Get Early Access</h2>
-            <p>Be among the first to experience AI-powered UPSC preparation. Limited spots available. We'll notify you as soon as it's your turn.</p>
-            <form class="early-access-form" id="earlyAccessForm" onsubmit="handleSubmit(event)">
-                <input type="email" id="emailInput" placeholder="Enter your email address" required>
-                <button type="submit">Request Access</button>
-            </form>
-            <p class="form-note">No spam. We'll only email you about your early access.</p>
-            <div class="form-success" id="formSuccess">
-                &#x2713; You're on the list! We'll reach out soon.
-            </div>
+            <h2>Coming Soon to Play Store</h2>
+            <p>AspirantAI is under review on Google Play Store. Once approved, you'll be able to download it for free and start your AI-powered preparation journey.</p>
+            <a href="#features" class="btn-primary" style="display:inline-block; margin-top: 8px;">Explore Features</a>
         </div>
     </div>
 </section>
@@ -596,7 +567,7 @@
             <a href="#features">Features</a>
             <a href="#why">Why AspirantAI</a>
             <a href="#compare">Compare</a>
-            <a href="#early-access">Early Access</a>
+            <a href="#download">Download</a>
         </div>
         <p class="footer-copy">&copy; 2025 AspirantAI by Bihari Engineers. All rights reserved.</p>
     </div>
@@ -614,29 +585,8 @@
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Early access form
-    function handleSubmit(e) {
-        e.preventDefault();
-        const email = document.getElementById('emailInput').value;
-        if (!email) return;
-
-        // Store in Google Sheets via a simple form endpoint (you can set up a Google Form or Formspree)
-        // For now, show success and log
-        const form = document.getElementById('earlyAccessForm');
-        const success = document.getElementById('formSuccess');
-        form.style.display = 'none';
-        document.querySelector('.form-note').style.display = 'none';
-        success.style.display = 'block';
-
-        // Optional: send to a backend endpoint
-        // fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify({ email: email })
-        // });
-
-        console.log('Early access request:', email);
-    }
+    // Initialize Lucide icons
+    lucide.createIcons();
 
     // Close mobile nav on link click
     document.querySelectorAll('.nav-links a').forEach(link => {
